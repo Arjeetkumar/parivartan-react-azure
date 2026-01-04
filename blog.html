@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Community Blog | Parivartan Prayas Foundation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .no-blogs {
+            text-align: center;
+            color: var(--gold);
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">Parivartan Prayas Foundation</div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        <nav id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html" class="active">Blog</a>
+            <a href="create-blog.html" class="cta-link">Write a Blog</a>
+            <a href="admin.html" class="admin-link">Admin</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="about-hero">
+        <h1>Community Voices</h1>
+        <p>Stories of change, hope, and compassion.</p>
+    </section>
+
+    <!-- BLOG LIST -->
+    <section class="about-section">
+        <div class="container" id="blog-container">
+            <!-- Blogs will be loaded here -->
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Parivartan Prayas Foundation. All Rights Reserved.</p>
+    </footer>
+
+    <script src="blog.js"></script>
+    <script>
+        // Navbar toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        if (hamburger) hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+        // Load Blogs
+        document.addEventListener('DOMContentLoaded', () => {
+            renderPublicBlogs('blog-container');
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | Parivartan Prayas Foundation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">Admin Panel</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="blog.html">View Blog</a>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <div class="container">
+            <h2>Pending Approvals</h2>
+            <div id="admin-container" class="admin-grid">
+                <!-- Pending items will load here -->
+            </div>
+        </div>
+    </section>
+
+    <script src="blog.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderAdminLogs('admin-container');
+        });
+    </script>
+
+</body>
+
+</html>

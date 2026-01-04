@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Write a Blog | Parivartan Prayas Foundation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">Parivartan Prayas Foundation</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="blog.html">Back to Blog</a>
+        </nav>
+    </header>
+
+    <section class="about-hero">
+        <h1>Share Your Story</h1>
+        <p>Your voice matters. Write about what inspires you.</p>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <form id="create-blog-form" class="volunteer-form">
+                <div class="form-group">
+                    <label style="color:var(--gold);">Title</label>
+                    <input type="text" id="title" required placeholder="Enter a catchy title">
+                </div>
+                <div class="form-group">
+                    <label style="color:var(--gold);">Author Name</label>
+                    <input type="text" id="author" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label style="color:var(--gold);">Content</label>
+                    <textarea id="content" rows="10" required placeholder="Write your story here..."></textarea>
+                </div>
+                <button type="submit">Submit for Review</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="blog.js"></script>
+    <script>
+        document.getElementById('create-blog-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            const content = document.getElementById('content').value;
+
+            if (title && author && content) {
+                addBlog(title, author, content);
+                if (window.showAlertModal) {
+                    showAlertModal('Blog submitted successfully! It is pending approval by the admin.', () => {
+                        window.location.href = 'blog.html';
+                    });
+                } else {
+                    alert('Blog submitted successfully! It is pending approval by the admin.');
+                    window.location.href = 'blog.html';
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
